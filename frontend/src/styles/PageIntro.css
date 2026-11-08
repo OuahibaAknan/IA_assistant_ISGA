@@ -1,0 +1,136 @@
+.page-intro {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999999;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.78),
+      rgba(20, 0, 8, 0.72),
+      rgba(120, 0, 35, 0.58)
+    ),
+  url("../../public/imgpr.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation: introBackgroundZoom 8s ease-in-out infinite alternate;
+}
+
+.intro-grid,
+.intro-blur {
+  display: none;
+}
+
+.intro-container {
+  width: 430px;
+  padding: 42px 34px;
+  text-align: center;
+  border-radius: 32px;
+
+  background: rgba(15, 15, 15, 0.38);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 35px 90px rgba(0,0,0,0.45);
+
+  animation: introPop 0.75s ease both;
+}
+
+.intro-logo-wrapper {
+  width: 135px;
+  height: 135px;
+  margin: 0 auto 24px;
+  border-radius: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.94);
+  box-shadow: 0 22px 55px rgba(0,0,0,0.28);
+}
+
+.intro-logo {
+  width: 105px;
+  height: auto;
+  object-fit: contain;
+  animation: logoPulse 2.2s ease-in-out infinite;
+}
+
+.intro-container h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+
+.intro-container h1 span {
+  margin: 0 10px;
+  color: #ff5b7f;
+}
+
+.intro-container p {
+  margin: 14px 0 0;
+  color: rgba(255,255,255,0.84);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.intro-loading-line {
+  width: 100%;
+  height: 6px;
+  margin-top: 30px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.22);
+}
+
+.intro-loading-progress {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffffff, #ff5b7f, #b3072f);
+  box-shadow: 0 0 22px rgba(255,91,127,0.7);
+}
+
+@keyframes introPop {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+}
+@keyframes introBackgroundZoom {
+  from {
+    background-size: 100%;
+  }
+
+  to {
+    background-size: 108%;
+  }
+}

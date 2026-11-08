@@ -1,0 +1,7 @@
+### Test chatbot OpenAI
+POST http://localhost:8080/api/chat
+Content-Type: application/json
+
+{
+  "question": "Bonjour, peux-tu te présenter comme chatbot de l'ISGA ?"
+}
